@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>게시글 상세조회</title>
 </head>
 <body>
+    <form action="" method="post">
 
+        <p><input type="hidden" name="id" th:value="${board.id}"></p>
+        <p><input type="text" name="title" th:value="${board.title}"></p>
+        <p><textarea name="content" id="" cols="30" rows="10" th:text="${board.content}"></textarea></p>
+        <p><input type="submit" value="수정" th:formaction="@{/boardUpdate}"></p>
+        <p><input type="submit" value="삭제" th:formaction="@{/boardDelete}"></p>
+
+<!--        <p><input type="text" name="id" hiden th:value="${board.id}"></p>  &lt;!&ndash;번호대신에 model이 뿌려준 id를 표시함&ndash;&gt;
+        <p><input type="text" name="title" th:value="${board.title}"></p>
+        <p><textarea name="content" id="" cols="30" rows="10" th:text="${board.content}"></textarea></p>
+        <p><input type="submit" value="수정" th:formaction="@{/boardUpdate/{id}(id=${board.id})}"></p>   &lt;!&ndash; form에 있던 action="/boardwrite"을 일로 옮겨옴&ndash;&gt;
+        <p><input type="submit" value="삭제" th:formaction="@{/boardDelete/{id}(id=${board.id})}"></p>   &lt;!&ndash; why? 수정, 삭제 중복방지 위해&ndash;&gt;-->
+    </form>
 </body>
 </html>

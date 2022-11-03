@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>게시판(게시글 리스트)</title>
 </head>
 <body>
-
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>내용</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="board : ${boards}">  <!-- {boards}에서 하나씩 꺼내서 board 변수에 대입해라 -->
+                <td><a th:href="@{/board/{id}(id=${board.id})}" th:text="${board.id}"></a></td>  <!-- th:  ==> 여기서부턴 타임리프 문법이다를 선언 -->
+                <td><a th:href="@{/board/{id}(id=${board.id})}" th:text="${board.title}"></a></td>
+                <td th:text="${board.content}"></td>
+            </tr>
+            <!--<tr>                        //매번 게시글이 늘어날 때마다 일일이 적어줄 필요가 x
+                <td>2</td>
+                <td>t</td>
+                <td>c</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>t</td>
+                <td>c</td>
+            </tr>-->
+        </tbody>
+    </table>
 </body>
 </html>
