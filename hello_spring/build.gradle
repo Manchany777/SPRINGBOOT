@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java'
+}
+
+group = 'hello'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	developmentOnly('org.springframework.boot:spring-boot-devtools')
+			// 데브풀 적용 두 가지 방식 def only = compileOnly 'org.springframework.boot:spring-boot-devtools'
+	        // 추가 후 설정 1. 셋팅 compiler -> Build project automatically 2. advanced settings -> Bookmarks탭 & Compiler탭의 체크박스 3개 모두 체크
+	implementation 'mysql:mysql-connector-java'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+			// mysql 두가
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

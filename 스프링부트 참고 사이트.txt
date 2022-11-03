@@ -1,0 +1,8 @@
+thymleaf 샘플
+https://github.com/yeon-06/inflearnSpring/blob/master/mvc1-3/src/main/resources/templates/basic
+
+샘플 코드와 강의자료
+https://dodeon.gitbook.io/study/kimyounghan-spring-core-principle/01-oop-spring/spring
+
+annotation
+https://melonicedlatte.com/2021/07/18/182600.html

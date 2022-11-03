@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{member/{id}(id=${member.id})}" method="post">
+    <!--td th:text="${member.id}"></td-->
+    <p><lable>아이디
+        <input type="text" name="id" readonly th:value="${member.id}"></lable></p>
+    <p><lable>이름
+        <input type="text" name="name" readonly th:value="${member.name}"></lable></p>
+    <p><label>전화번호
+        <input type="text" name="phone" th:value="${member.phone}"></label></p>
+    <p><label>이메일
+        <input type="email" name="email" th:value="${member.email}"></label></p>
+    <p> <label>주소
+        <input type="text" name="address" th:value="${member.address}"></label></p>
+
+    <p> <input type="submit"></p>
+
+</form>
+</body>
+</html>

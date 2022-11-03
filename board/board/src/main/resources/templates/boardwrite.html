@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 작성</title>
+</head>
+<body>
+
+<form action="/boardwrite" method="post">
+    <p><input type="text" name="title"></p>  <!--name에 title과 content를 줘서 postmapping이 되게 해야함
+                                                 or 아예 title, content속성을 변수값으로 줄 수도 있다 (이건 노가다라 굳이...)-->
+    <p><textarea name="content" id="" cols="" rows=""></textarea></p>
+    <p><input type="submit"></p>
+</form>
+</body>
+</html>
